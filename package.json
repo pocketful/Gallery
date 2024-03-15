@@ -15,7 +15,8 @@
     "lint": "eslint src --ext .ts,.tsx,.js,.jsx",
     "lintfix": "eslint src --ext .ts,.tsx,.js,.jsx --fix",
     "format": "prettier \"src/**/*.{ts,tsx,js,jsx}\" --write",
-    "formatcheck": "prettier \"src/**/*.{ts,tsx,js,jsx}\" --check"
+    "formatcheck": "prettier \"src/**/*.{ts,tsx,js,jsx}\" --check",
+    "stylelint": "stylelint \"src/**/*.{scss,css}\""
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -37,7 +38,11 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.4.35",
     "prettier": "^3.2.5",
+    "sass": "^1.72.0",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard-scss": "^13.0.0",
     "typescript": "^5.2.2",
     "vite": "^5.1.6"
   }
