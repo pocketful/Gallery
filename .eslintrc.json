@@ -19,6 +19,7 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:import/recommended",
     "plugin:import/typescript",
+    "plugin:jest/recommended",
     "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
@@ -31,8 +32,19 @@
     "project": "./tsconfig.json"
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks", "react-refresh"],
+  "overrides": [
+    {
+      "files": ["*.test.ts", "*.test.tsx"],
+      "extends": [
+        "plugin:jest/recommended",
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/react"
+      ]
+    }
+  ],
   "rules": {
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["vite.config.ts"] }],
+    "no-console": 0,
+    "react/prop-types": 0,
     "react-refresh/only-export-components": ["warn", { "allowConstantExport": true }]
   }
 }
