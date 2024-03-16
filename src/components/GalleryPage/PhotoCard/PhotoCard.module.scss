@@ -1,0 +1,81 @@
+@use 'sass:color';
+@import '/src/styles/colors';
+@import '/src/styles/typography';
+@import '/src/styles/media-queries';
+
+.card {
+  width: 100%;
+  height: 230px;
+  border-radius: 5px;
+  box-shadow: 3px 3px color.adjust($background-color, $lightness: -15%);
+  position: relative;
+
+  .content {
+    position: absolute;
+    background-color: rgba($primary-color, 0.3);
+    color: $secondary-color;
+    border-radius: 5px;
+    text-transform: capitalize;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5em 0.5rem 0;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+
+    .description {
+      font-weight: $weight-bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-bottom: 0.6em;
+      width: 80%;
+    }
+
+    .photographer {
+      font-size: 1.1rem;
+      font-style: italic;
+      font-weight: $weight-bolder;
+      padding-bottom: 1em;
+      width: 80%;
+      position: relative;
+    }
+
+    .photographer::before {
+      content: '';
+      position: absolute;
+      background-color: $secondary-color;
+      height: 2px;
+      width: 5rem;
+      top: -0.35em;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .error {
+    color: $error-color;
+    text-align: center;
+    padding-top: 1.5em;
+  }
+
+  &:hover {
+    .content {
+      opacity: 1;
+    }
+  }
+
+  @include for(ScreenM) {
+    min-height: auto;
+  }
+}
