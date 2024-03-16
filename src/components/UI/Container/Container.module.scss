@@ -1,0 +1,24 @@
+@import '/src/styles/media-queries';
+@import '/src/styles/sizes';
+
+.container {
+  margin: 0 auto;
+  max-width: $container-max-w;
+  padding: $container-pd-m $container-pd-xl;
+
+  @include for(ScreenL) {
+    padding: $container-pd-s $container-pd-l;
+  }
+
+  @include for(ScreenM) {
+    padding: $container-pd-s $container-pd-m;
+  }
+
+  @include for(ScreenS) {
+    padding: $container-pd-s;
+  }
+
+  @include for(ScreenXS) {
+    padding: $container-pd-xs;
+  }
+}

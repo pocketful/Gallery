@@ -1,0 +1,74 @@
+@import './colors';
+@import './media-queries';
+@import './typography';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: $background-color;
+  color: $primary-color;
+  font-size: $base-font-size;
+  letter-spacing: $base-letter-spacing;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+  @include for(ScreenL) {
+    font-size: $font-size-m;
+  }
+
+  @include for(ScreenM) {
+    font-size: $font-size-s;
+  }
+
+  @include for(ScreenXS) {
+    font-size: $font-size-xs;
+  }
+}
+
+body {
+  min-height: 100vh;
+  font-family: $font-primary;
+  font-weight: $weight-regular;
+  line-height: $base-line-height;
+}
+
+img {
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  letter-spacing: inherit;
+}
