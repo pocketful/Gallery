@@ -1,0 +1,16 @@
+@import './sizes';
+
+// grid gap size
+@mixin gap-size($size) {
+  @if $size == gapXS {
+    grid-gap: $grid-gap-xs;
+  } @else if $size == gapS {
+    grid-gap: $grid-gap-s;
+  } @else if $size == gapM {
+    grid-gap: $grid-gap-m;
+  } @else if $size == gapL {
+    grid-gap: $grid-gap-l;
+  } @else if $size == gapXL {
+    grid-gap: $grid-gap-xl;
+  }
+}
