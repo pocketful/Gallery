@@ -1,0 +1,28 @@
+@import '/src/styles/media-queries';
+@import '/src/styles/mixins';
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+
+  @include gap-size(gapXL);
+
+  @include for(ScreenL) {
+    @include gap-size(gapL);
+  }
+
+  @include for(ScreenM) {
+    @include gap-size(gapM);
+  }
+
+  @include for(ScreenS) {
+    grid-template-columns: repeat(2, 1fr);
+
+    @include gap-size(gapS);
+  }
+
+  @include for(ScreenXS) {
+    @include gap-size(gapXS);
+  }
+}
