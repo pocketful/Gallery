@@ -24,7 +24,6 @@ const useInfiniteScroll = ({ loading, hasNextPage, error, onLoadMore }: Props) =
     // Checks if the user has scrolled near the bottom of the page (tolerance: 200px)
     const scrolledToBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 200
     if (scrolledToBottom && hasNextPage && !loading && !error) {
-      console.log('handleLoadMore()')
       handleLoadMore()
     }
   }, [loading, hasNextPage, error, handleLoadMore])

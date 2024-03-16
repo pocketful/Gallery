@@ -68,8 +68,6 @@ const useLoadPhotos = () => {
   }, [page])
 
   const loadMorePhotos = () => {
-    console.log('loadMorePhotos')
-
     setPage((prevPage) => prevPage + 1)
   }
 
